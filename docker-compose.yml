@@ -12,7 +12,7 @@ volumes:
 
 services:
   unifi:
-    image: ryansch/unifi-rpi:5.13.10-arm32v7
+    image: ryansch/unifi-rpi:6.1.26-arm32v7
     ports:
       - "3478:3478/udp"
       - "6789:6789"
@@ -34,7 +34,7 @@ services:
     privileged: true
     environment:
     #  WEBPASSWORD: # set in balena
-      TZ: America/Los_Angeles
+      TZ: Europe/Bucharest
       DNSMASQ_LISTENING: eth0
       INTERFACE: eth0
     volumes:
