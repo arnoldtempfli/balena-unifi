@@ -35,8 +35,8 @@ services:
     environment:
     #  WEBPASSWORD: # set in balena
       TZ: Europe/Bucharest
-      DNSMASQ_LISTENING: eth0
-      INTERFACE: eth0
+      DNSMASQ_LISTENING: wlan0
+      INTERFACE: wlan0
     volumes:
       - pihole:/etc/pihole
       - dnsmasq:/etc/dnsmasq.d
