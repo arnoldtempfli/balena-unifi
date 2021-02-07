@@ -30,8 +30,15 @@ services:
       - unifi-run:/usr/lib/unifi/run
       - unifi-run2:/run/unifi
       - unifi-work:/usr/lib/unifi/work
+    restart: unless_stopped
   pihole:
     build: ./pihole
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "67:67/udp"
+      - "9080:80/tcp"
+      - "9443:443/tcp"
     privileged: true
     environment:
     #  WEBPASSWORD: # set in balena
@@ -45,6 +52,7 @@ services:
       - 127.0.0.1
       - 1.1.1.1
     network_mode: host
+    restart: unless_stopped
   cups:
     build: ./cups
     ports:
@@ -59,3 +67,4 @@ services:
       io.balena.features.dbus: '1'
       io.balena.features.supervisor-api: '1'
       io.balena.features.balena-api: '1'
+    restart: unless_stopped

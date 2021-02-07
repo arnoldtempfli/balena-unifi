@@ -19,3 +19,6 @@ Deployment repo for a Balena application (RasPi 3) containing:
 #### PiHole
 
 - Set an environment variable `WEBPASSWORD` in balena UI, this is the passowrd for the PiHole admin console.
+
+#### CUPS
+- Using https://github.com/willswire/balenaPrint
