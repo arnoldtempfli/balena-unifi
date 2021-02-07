@@ -1,6 +1,9 @@
-## Unifi Controller and PiHole on Balena
+## Unifi Controller, PiHole and CUPS on Balena
 
-Deployment repo for a Balena application (RasPi 3) contining Unifi Controlelr and PiHole.
+Deployment repo for a Balena application (RasPi 3) containing:
+* Unifi Controller
+* PiHole
+* CUPS & AirPrint
 
 ### Usage notes
 
@@ -15,4 +18,4 @@ Deployment repo for a Balena application (RasPi 3) contining Unifi Controlelr an
 
 #### PiHole
 
-- Set an evironment variable `WEBPASSWORD` in balena UI, this is the passowrd for the PiHole admin console.
+- Set an environment variable `WEBPASSWORD` in balena UI, this is the passowrd for the PiHole admin console.

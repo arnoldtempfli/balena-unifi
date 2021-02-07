@@ -1,4 +1,4 @@
-version: '2'
+version: '2.1'
 
 volumes:
   unifi-config:
@@ -9,10 +9,11 @@ volumes:
   unifi-work:
   pihole:
   dnsmasq:
+  cups:
 
 services:
   unifi:
-    image: ryansch/unifi-rpi:6.1.26-arm32v7
+    image: ryansch/unifi-rpi:6.1.51-arm32v7
     ports:
       - "3478:3478/udp"
       - "6789:6789"
@@ -44,3 +45,17 @@ services:
       - 127.0.0.1
       - 1.1.1.1
     network_mode: host
+  cups:
+    build: ./cups
+    ports:
+      - "80"
+    privileged: true
+    network_mode: host
+    volumes:
+      - 'cups:/etc/cups'
+    labels:
+      io.balena.features.kernel-modules: '1'
+      io.balena.features.firmware: '1'
+      io.balena.features.dbus: '1'
+      io.balena.features.supervisor-api: '1'
+      io.balena.features.balena-api: '1'
